@@ -1,6 +1,8 @@
 package com.khalilifar;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,11 @@ public class Main {
         s1.setRollNo(4);
         s1.setsName("Rosie");
 
-        Session session = null;
+        Configuration cfg = new Configuration();
+
+        SessionFactory sf = cfg.buildSessionFactory();
+        Session session = sf.openSession();
+
         session.save(s1);
 
         System.out.println(s1);
