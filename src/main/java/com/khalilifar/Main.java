@@ -13,6 +13,7 @@ public class Main {
         s1.setsName("Rosie");
 
         Configuration cfg = new Configuration();
+        cfg.configure();
 
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
